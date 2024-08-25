@@ -1,4 +1,8 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby';
+
+require('dotenv').config({
+   path: `.env.${process.env.NODE_ENV}`,
+});
 
 const config: GatsbyConfig = {
    siteMetadata: {
@@ -10,12 +14,12 @@ const config: GatsbyConfig = {
    // Learn more at: https://gatsby.dev/graphql-typegen
    graphqlTypegen: true,
    plugins: [
-      "gatsby-plugin-sass",
+      'gatsby-plugin-sass',
       {
-         resolve: "gatsby-source-sanity",
-         options: { projectId: "gtllxo8k", dataset: "production" },
+         resolve: 'gatsby-source-sanity',
+         options: { projectId: 'gtllxo8k', dataset: 'production' },
       },
-      "gatsby-plugin-image",
+      'gatsby-plugin-image',
    ],
 };
 

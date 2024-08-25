@@ -1,23 +1,23 @@
-import { Link } from "gatsby";
-import { ReactElement, useState, useEffect, useRef, useCallback } from "react";
-import * as React from "react";
-import "../styles/index.scss";
+import { Link } from 'gatsby';
+import { ReactElement, useState, useEffect, useRef, useCallback } from 'react';
+import * as React from 'react';
+import '../styles/index.css';
 
 export const LinkPage: React.FC = () => {
    const [isMobile, setIsMobile] = useState(false);
 
    useEffect(() => {
-      const mobileMediaQuery = matchMedia("(max-width: 800px)");
+      const mobileMediaQuery = matchMedia('(max-width: 800px)');
 
       const listener = () => {
          setIsMobile(mobileMediaQuery.matches);
       };
 
-      mobileMediaQuery.addEventListener("change", listener);
+      mobileMediaQuery.addEventListener('change', listener);
 
       listener();
 
-      return () => mobileMediaQuery.removeEventListener("change", listener);
+      return () => mobileMediaQuery.removeEventListener('change', listener);
    }, []);
 
    const mainRef = useRef<HTMLDivElement>(null);
@@ -33,14 +33,12 @@ export const LinkPage: React.FC = () => {
             const pageX = (e.clientX - window.innerWidth / 2) / size,
                pageY = (e.clientY - window.innerHeight / 2) / size;
 
-            mainRef.current.querySelectorAll(".shit").forEach((element) => {
-               const scale = +(
-                  element.getAttribute("data-parallax-scale") ?? "1"
-               );
+            mainRef.current.querySelectorAll('.shit').forEach((element) => {
+               const scale = +(element.getAttribute('data-parallax-scale') ?? '1');
 
-               (element as HTMLElement).style.transform = `translateX(${
-                  pageX * scale
-               }px) translateY(${pageY * scale}px)`;
+               (element as HTMLElement).style.transform = `translateX(${pageX * scale}px) translateY(${
+                  pageY * scale
+               }px)`;
             });
          }
       },
@@ -52,18 +50,17 @@ export const LinkPage: React.FC = () => {
          <div
             className="noisyBG"
             style={{
-               backgroundColor: "#000",
-            }}></div>
-         <div
-            className="splashBG splashContainer"
-            onMouseMove={mouseMoveHandle}>
+               backgroundColor: '#000',
+            }}
+         ></div>
+         <div className="splashBG splashContainer" onMouseMove={mouseMoveHandle}>
             <div className="leftList">
                <div className="listContainer shit" data-parallax-scale={0.2}>
                   <div className="titleBar">
                      <h1>Spencer Raymond</h1>
                      <div className="socialLinks">
                         <div className="social">
-                           <Link to="/presskit">Press Kit</Link>
+                           <a href="https://spencerraymon.de/presskit">Press Kit</a>
                         </div>
                      </div>
                   </div>
@@ -77,9 +74,7 @@ export const LinkPage: React.FC = () => {
                      <div className="showContainer">
                         <div className="imageDiv shit" data-parallax-scale={1}>
                            image!
-                           <div
-                              className="headingDiv shit"
-                              data-parallax-scale={2}>
+                           <div className="headingDiv shit" data-parallax-scale={2}>
                               <h3 className="showText">title!</h3>
                            </div>
                         </div>
