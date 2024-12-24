@@ -133,7 +133,9 @@ export default ({ pageContext }: { pageContext: Context }) => {
                   {sLinks}
                   <div className="titleBar">
                      <h3>{parseReleaseDate(pageContext.releaseDate)}</h3>
-                     <h1>Spencer Raymond</h1>
+                     <OutboundLink className={'h1Link'} href={'https://spencerraymon.de'}>
+                        <h1>Spencer Raymond</h1>
+                     </OutboundLink>
                      <div className="socialLinks">
                         {links.map((link, i) => (
                            <div key={i} className="social">

@@ -114,7 +114,13 @@ h1 {
    padding-bottom: 0;
    padding-top: 0;
    margin: 5px;
+   text-decoration: none;
 }
+
+.h1Link {
+   text-decoration: none;
+}
+
 h3 {
    font-family: Jost, Arial, Helvetica, sans-serif;
    font-weight: 300;
