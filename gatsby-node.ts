@@ -1,5 +1,4 @@
 import type { GatsbyNode } from 'gatsby';
-import { release } from 'os';
 import path from 'path';
 
 const ARTIST = 'Spencer Raymond';
@@ -119,36 +118,3 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       });
    });
 };
-
-const streamLinksList: StreamLinksListItem[] = [];
-
-type StreamLinksListItem = {
-   path: string;
-   title: string;
-   releaseDate: string;
-   albumArt: any;
-   palette: string;
-   artist: string;
-   links: StreamLinks;
-};
-
-type StreamLinks = {
-   appleMusic?: string;
-   bandcamp?: string;
-   soundcloud?: string;
-   spotify?: string;
-   tidal?: string;
-   youtube?: string | void;
-};
-
-// const getYoutubeLink = async (title: string) => {
-//    return await fetch(
-//       `https://www.googleapis.com/youtube/v3/search?q=${ARTIST} ${title}&key=${process.env.YOUTUBE_API_KEY}`
-//    )
-//       .then((res) => res.json())
-//       .then((data) => {
-//          console.log(data);
-//          return `https://youtube.com/watch?v=${data.items[0].id.videoId}`;
-//       })
-//       .catch((err) => console.error('uh oh', err));
-// };

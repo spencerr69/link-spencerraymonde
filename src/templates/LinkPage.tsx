@@ -1,12 +1,9 @@
-import { PageProps } from 'gatsby';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import * as React from 'react';
 import './../styles/index.css';
-import { GatsbyImageDataArgs } from 'gatsby-source-sanity';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { links } from '../consts/vars';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 const ListItem = (props: { children: any }) => {
    return <div className="listLink">{props.children}</div>;
