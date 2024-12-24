@@ -63,7 +63,6 @@ export function Head({ location, pageContext }: { location: Location; pageContex
 }
 
 export default ({ pageContext }: { pageContext: Context }) => {
-   console.log(pageContext);
    const [isMobile, setIsMobile] = useState(false);
    const [sLinks, setSLinks] = useState<React.ReactElement[]>([]);
 

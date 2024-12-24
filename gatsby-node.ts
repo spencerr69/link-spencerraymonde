@@ -75,6 +75,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       toPath: `/${mostRecentSlug.data.allSanityRelease.edges[0].node.slug.current}`,
       redirectInBrowser: true,
       isPermanent: true,
+      exactPath: true,
    });
 
    result.data.allSanityRelease.edges.forEach((edge: any, i: any) => {
