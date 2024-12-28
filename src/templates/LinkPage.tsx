@@ -9,15 +9,17 @@ const ListItem = (props: { children: any }) => {
    return <div className="listLink">{props.children}</div>;
 };
 
+/**
+ * Converts a release date string from the format 'YYYY-MM-DD' to 'YYYY/MM/DD'.
+ *
+ * @param {string} input - The release date string in 'YYYY-MM-DD' format.
+ * @returns {string} - The formatted release date string in 'YYYY/MM/DD' format.
+ */
+
 const parseReleaseDate = (input: string): string => {
    const temp = input.split('-');
    return `${temp[0]}/${temp[1]}/${temp[2]}`;
 };
-
-function constructUrl(baseUrl: string, path: string) {
-   if (baseUrl === '' || path === '') return '';
-   return `${baseUrl}${path}`;
-}
 
 export function Head({ location, pageContext }: { location: Location; pageContext: Context }) {
    const { title, description } = { title: pageContext.title, description: pageContext.artist };
@@ -158,9 +160,6 @@ export default ({ pageContext }: { pageContext: Context }) => {
                               <h3 className="showText">{pageContext.title}</h3>
                            </div>
                         </div>
-                        {/* <div className="releaseDate shit" data-parallax-scale={1.5}>
-                           {parseReleaseDate(pageContext.releaseDate)}
-                        </div> */}
                      </div>
                   </div>
                </div>
