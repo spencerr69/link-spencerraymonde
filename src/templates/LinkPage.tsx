@@ -3,7 +3,6 @@ import * as React from 'react';
 import './../styles/index.css';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { links } from '../consts/vars';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 const ListItem = (props: { children: any }) => {
     return <div className="listLink">{props.children}</div>;
@@ -85,9 +84,9 @@ export default ({ pageContext }: { pageContext: Context }) => {
         setSLinks(
             rawLinks.map((rawLink, i) => {
                 return rawLink.url !== null ? (
-                    <OutboundLink key={rawLink.name} href={rawLink.url} className="listItem">
+                    <a key={rawLink.name} href={rawLink.url} className="listItem">
                         <ListItem>{rawLink.name}</ListItem>
-                    </OutboundLink>
+                    </a>
                 ) : <></>;
             }).filter(e => e.key)
         );
@@ -131,13 +130,13 @@ export default ({ pageContext }: { pageContext: Context }) => {
                         {sLinks}
                         <div className="titleBar">
                             <h3>{parseReleaseDate(pageContext.releaseDate)}</h3>
-                            <OutboundLink className={'h1Link'} href={'https://spencerraymon.de'}>
+                            <a className={'h1Link'} href={'https://spencerraymon.de'}>
                                 <h1>Spencer Raymond</h1>
-                            </OutboundLink>
+                            </a>
                             <div className="socialLinks">
                                 {links.map((link, i) => (
                                     <div key={i} className="social">
-                                        <OutboundLink href={link.url}>{link.name}</OutboundLink>
+                                        <a href={link.url}>{link.name}</a>
                                     </div>
                                 ))}
                                 <div className="social">
