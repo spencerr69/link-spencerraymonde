@@ -14,9 +14,15 @@ importers:
       gatsby:
         specifier: ^5.13.5
         version: 5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4)
+      gatsby-plugin-google-gtag:
+        specifier: ^5.14.0
+        version: 5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-image:
         specifier: ^3.13.1
         version: 3.13.1(@babel/core@7.25.2)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gatsby-plugin-posthog:
+        specifier: ^1.0.1
+        version: 1.0.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-plugin-sass:
         specifier: ^6.13.1
         version: 6.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(sass@1.77.8)(webpack@5.93.0)
@@ -2726,6 +2732,7 @@ packages:
   eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   esniff@2.0.1:
@@ -3025,6 +3032,14 @@ packages:
     peerDependencies:
       '@parcel/core': ^2.0.0
 
+  gatsby-plugin-google-gtag@5.15.0:
+    resolution: {integrity: sha512-rbY640ejbR8YzssWGs2RDUVw/RJjI6O62ED0TgExXW3uOQ/JFl0ZPEA+eqBos9qnnjfmbMt+m2iPU+viLtVkMA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      gatsby: ^5.0.0-next
+      react: ^18.0.0 || ^0.0.0
+      react-dom: ^18.0.0 || ^0.0.0
+
   gatsby-plugin-image@3.13.1:
     resolution: {integrity: sha512-v5jGXxjr//iLk7LzpW6RW/9H4KNVezxee2Sgy9mxvdvekTuFQLYoQmtk2jOZINMZMP3Vm+Rl3MqWWVMfhHuWFw==}
     peerDependencies:
@@ -3045,6 +3060,13 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
+
+  gatsby-plugin-posthog@1.0.1:
+    resolution: {integrity: sha512-RIyDTj/XcMvmV6Vs6HJa8zQFGcQr52LcS4iD76g5WfFB705hFOAPchIISFoFMQd3qN1n3m4jUinhA/uuhN43Qg==}
+    peerDependencies:
+      gatsby: ^2.0.0
+      react: ^16.4.2
+      react-dom: ^16.4.2
 
   gatsby-plugin-sass@6.13.1:
     resolution: {integrity: sha512-pHS1hJhOPMEaC1eLsuXgqskLBUxbpYR1lUb7yxL4jva0PX2HOQTYTczFYtueOWz/7RD0GjrDCHIWOzUIGauRsQ==}
@@ -9639,6 +9661,14 @@ snapshots:
       '@parcel/transformer-js': 2.8.3(@parcel/core@2.8.3)
       '@parcel/transformer-json': 2.8.3(@parcel/core@2.8.3)
 
+  gatsby-plugin-google-gtag@5.15.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.25.0
+      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4)
+      minimatch: 3.1.2
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   gatsby-plugin-image@3.13.1(@babel/core@7.25.2)(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/code-frame': 7.24.7
@@ -9682,6 +9712,13 @@ snapshots:
       - encoding
       - graphql
       - supports-color
+
+  gatsby-plugin-posthog@1.0.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.25.0
+      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   gatsby-plugin-sass@6.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.4))(sass@1.77.8)(webpack@5.93.0):
     dependencies:
